@@ -1,3 +1,4 @@
+"""Demonstrates triple double quotes."""
 import re
 import tweepy
 from textblob import TextBlob

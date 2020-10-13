@@ -43,8 +43,7 @@ def get_analysis(score):
         return 'Negative'
     if score==0:
         return 'Neutral'
-    if score>0:
-        return 'Positive'
+    return 'Positive'
 df['Analysis']=df['Polarity'].apply(get_analysis)
 print(df)
 #Stage 1: Cleaning data (Removing @,#,hyperlinks etc)

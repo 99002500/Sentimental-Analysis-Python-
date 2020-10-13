@@ -61,7 +61,7 @@ print(df)
 
 #Stage 1: Cleaning data (Removing @,#,hyperlinks etc ), store data in dataframe and find subjectivity and polarity of each sentence and find positive or negative sentence
 
-#print all positive values
+#print all positive tweets
 j=1
 sortedDF=df.sort_values(by=['Polarity'])
 for i in range(0,sortedDF.shape[0]):
@@ -105,4 +105,4 @@ plt.ylabel('counts')
 df['Analysis'].value_counts().plot(kind='bar')
 plt.show()
 
-#stage2 counting number of positive tweets and negative tweets,plotted graphs
+#stage2 counting number of positive tweets and negative tweets,plotteing graphs completed

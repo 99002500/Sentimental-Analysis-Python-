@@ -20,6 +20,7 @@ for tweet in posts[0:5]:
 df=pd.DataFrame([tweet.full_text for tweet in posts],columns=['Tweets'])
 df.head()
 def clean_txt(text):
+    """Returns arg1 raised to power arg2."""
     text=re.sub(r'@[A-Za-z0-9]+','',text)
     text=re.sub(r'#','',text)
     text=re.sub(r'RT[\s]+','',text)
@@ -28,13 +29,16 @@ def clean_txt(text):
 df['Tweets']=df['Tweets'].apply(clean_txt)
 print(df)
 def get_subjectivity(text):
+    """Returns arg1 raised to power arg2."""
     return TextBlob(text).sentiment.subjectivity
 def get_polarity(text):
+    """Returns arg1 raised to power arg2."""
     return TextBlob(text).sentiment.polarity
 df['Subjectivity']=df['Tweets'].apply(get_subjectivity)
 df['Polarity']=df['Tweets'].apply(get_polarity)
 print(df)
 def get_analysis(score):
+    """Demonstrates triple double quotes."""
     if score<0:
         return 'Negative'
     if score==0:

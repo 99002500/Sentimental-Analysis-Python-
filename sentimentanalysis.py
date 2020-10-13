@@ -35,11 +35,6 @@ def get_polarity(text):
 df['Subjectivity']=df['Tweets'].apply(get_subjectivity)
 df['Polarity']=df['Tweets'].apply(get_polarity)
 print(df)
-allWords=' '.join([twts for twts in df['Tweets']])
-wordCloud=WordCloud(width=500,height=300,random_state=21,max_font_size=119).generate(allWords)
-plt.imshow(wordCloud,interpolation='bilinear')
-plt.axis('off')
-plt.show()
 def get_analysis(score):
     if score<0:
         return 'Negative'
@@ -49,8 +44,7 @@ def get_analysis(score):
         return 'Positive'
 df['Analysis']=df['Polarity'].apply(get_analysis)
 print(df)
-#Stage 1: Cleaning data (Removing @,#,hyperlinks etc )
-#print positive tweets
+#Stage 1: Cleaning data (Removing @,#,hyperlinks etc)
 j=1
 sortedDF=df.sort_values(by=['Polarity'])
 for i in range(0,sortedDF.shape[0]):

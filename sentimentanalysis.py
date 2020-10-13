@@ -42,13 +42,13 @@ df['Subjectivity']=df['Tweets'].apply(getSubjectivity)
 df['Polarity']=df['Tweets'].apply(getPolarity)
 print(df)
 
-'''
+
 allWords=' '.join([twts for twts in df['Tweets']])
 wordCloud=WordCloud(width=500,height=300,random_state=21,max_font_size=119).generate(allWords)
 plt.imshow(wordCloud,interpolation='bilinear')
 plt.axis('off')
 plt.show()
-'''
+
 
 def getAnalysis(score):
     if score<0:
@@ -115,6 +115,7 @@ df['Analysis'].value_counts().plot(kind='bar')
 plt.show()
 
 #stage2 counting number of positive tweets and negative tweets,plotted graphs
+<<<<<<< HEAD
 
 
 
@@ -125,3 +126,5 @@ plt.show()
   #  writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
    # writer.writeheader()
     #writer.writerows(tweets)
+=======
+>>>>>>> 04908803d7bf7de958dc2f7e2112ed300b5e7eab

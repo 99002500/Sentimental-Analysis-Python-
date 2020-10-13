@@ -114,17 +114,9 @@ df['Analysis'].value_counts().plot(kind='bar')
 
 plt.show()
 
-#stage2 counting number of positive tweets and negative tweets,plotted graphs
-<<<<<<< HEAD
+#stage2
 
 
 
-#tweets = [{'sentiment' : 'positive', 'text' : 'some text'}, {'sentiment' : 'negative', 'text' : 'some other text'}]
 
-#with open('tweets.csv', 'w') as csvfile:
- #   fieldnames = ['sentiment', 'text']
-  #  writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
-   # writer.writeheader()
-    #writer.writerows(tweets)
-=======
->>>>>>> 04908803d7bf7de958dc2f7e2112ed300b5e7eab
+

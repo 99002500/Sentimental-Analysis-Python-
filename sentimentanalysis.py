@@ -103,3 +103,5 @@ plt.xlabel('Sentiment')
 plt.ylabel('counts')
 df['Analysis'].value_counts().plot(kind='bar')
 plt.show()
+
+#stage2 counting number of positive tweets and negative tweets,plotted graphs

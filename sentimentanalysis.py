@@ -41,13 +41,13 @@ df['Subjectivity']=df['Tweets'].apply(getSubjectivity)
 df['Polarity']=df['Tweets'].apply(getPolarity)
 print(df)
 
-'''
+
 allWords=' '.join([twts for twts in df['Tweets']])
 wordCloud=WordCloud(width=500,height=300,random_state=21,max_font_size=119).generate(allWords)
 plt.imshow(wordCloud,interpolation='bilinear')
 plt.axis('off')
 plt.show()
-'''
+
 
 def getAnalysis(score):
     if score<0:
@@ -61,7 +61,6 @@ print(df)
 
 #Stage 1: Cleaning data (Removing @,#,hyperlinks etc ), store data in dataframe and find subjectivity and polarity of each sentence and find positive or negative sentence
 
-#print all positive tweets
 j=1
 sortedDF=df.sort_values(by=['Polarity'])
 for i in range(0,sortedDF.shape[0]):
@@ -77,7 +76,7 @@ for i in range(0,sortedDF.shape[0]):
         print(str(j) + ') '+sortedDF['Tweets'][i])
         print()
         j=j+1
-#plot polarity and subjectgffhfghivity
+#plot polarity and subjectivity
 plt.figure(figsize=(8,6))  
 for i in range(0,df.shape[0]):
     plt.scatter(df['Polarity'][i],df['Subjectivity'][i],color='blue')      
@@ -96,7 +95,7 @@ print(round((ptweets.shape[0]/df.shape[0])*100,1))
 ntweets=df[df.Analysis=='Negative']
 ntweets=ntweets['Tweets']
 print(round((ntweets.shape[0]/df.shape[0])*100,1))
-#show the value counts 
+#show the value counts iii8uyh
 print(df['Analysis'].value_counts)
 #plot and visualize counts
 plt.title('Sentiment Analysis')
@@ -105,4 +104,4 @@ plt.ylabel('counts')
 df['Analysis'].value_counts().plot(kind='bar')
 plt.show()
 
-#stage2 counting number of positive tweets and negative tweets,plotteing graphs completed
+#stage2 counting number of positive tweets and negative tweets,plotted graphs

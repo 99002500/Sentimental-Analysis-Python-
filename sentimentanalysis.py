@@ -18,6 +18,7 @@ i=1
 for tweet in posts[0:5]:
     print(str(i) + ') '+ tweet.full_text + '\n')
     i=i+1
+     # Stage 0- Importing Libraries and then setting keys for APIs and display 5 tweets of user  
 df=pd.DataFrame([tweet.full_text for tweet in posts],columns=['Tweets'])
 df.head()
 
@@ -57,3 +58,5 @@ def getAnalysis(score):
         return 'Positive'
 df['Analysis']=df['Polarity'].apply(getAnalysis)
 print(df)
+
+#Stage 1: Cleaning data (Removing @,#,hyperlinks etc ), store data in dataframe and find subjectivity and polarity of each sentence and find positive or negative sentence

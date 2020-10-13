@@ -1,7 +1,6 @@
 import re
 import tweepy
 from textblob import TextBlob
-from wordcloud import WordCloud
 import pandas as pd
 import matplotlib.pyplot as plt
 CONSUMERKEY = "5Wittq9oSwEecQrKo67RoGnZv"
@@ -82,7 +81,7 @@ print(df['Analysis'].value_counts)
 plt.title('Sentiment Analysis')
 plt.xlabel('Sentiment')
 plt.ylabel('counts')
-df['Analysis'].value_counts().plot(kind='bar')
+df['Analysis'].value_counts().plot(kind='pie')
 plt.show()
 #stage2
 

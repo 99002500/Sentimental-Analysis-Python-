@@ -60,3 +60,46 @@ df['Analysis']=df['Polarity'].apply(getAnalysis)
 print(df)
 
 #Stage 1: Cleaning data (Removing @,#,hyperlinks etc ), store data in dataframe and find subjectivity and polarity of each sentence and find positive or negative sentence
+
+j=1
+sortedDF=df.sort_values(by=['Polarity'])
+for i in range(0,sortedDF.shape[0]):
+    if(sortedDF['Analysis'][i]=='Positive'):
+        print(str(j) + ') '+sortedDF['Tweets'][i])
+        print()
+        j=j+1
+ #print all negative tweets
+j=1
+sortedDF=df.sort_values(by=['Polarity'],ascending='False')
+for i in range(0,sortedDF.shape[0]):
+    if(sortedDF['Analysis'][i]=='Negative'):
+        print(str(j) + ') '+sortedDF['Tweets'][i])
+        print()
+        j=j+1
+#plot polarity and subjectivity
+plt.figure(figsize=(8,6))  
+for i in range(0,df.shape[0]):
+    plt.scatter(df['Polarity'][i],df['Subjectivity'][i],color='blue')      
+       
+plt.title('Sentiment Analysis')  
+plt.xlabel('Polarity')
+plt.ylabel('Subjectivity')
+plt.show()   
+ #get the percentage of positive tweets
+
+ptweets=df[df.Analysis=='Positive']
+ptweets=ptweets['Tweets']
+print(round((ptweets.shape[0]/df.shape[0])*100,1))
+   #get the percentage of negative tweets
+
+ntweets=df[df.Analysis=='Negative']
+ntweets=ntweets['Tweets']
+print(round((ntweets.shape[0]/df.shape[0])*100,1))
+#show the value counts iii8uyh
+print(df['Analysis'].value_counts)
+#plot and visualize counts
+plt.title('Sentiment Analysis')
+plt.xlabel('Sentiment')
+plt.ylabel('counts')
+df['Analysis'].value_counts().plot(kind='bar')
+plt.show()

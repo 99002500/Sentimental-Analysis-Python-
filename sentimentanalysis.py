@@ -77,10 +77,9 @@ ntweets=ntweets['Tweets']
 print(round((ntweets.shape[0]/df.shape[0])*100,1))
 #show the value counts
 print(df['Analysis'].value_counts)
-#plot and visualize counts
+#plot and vibsualize counts
 plt.title('Sentiment Analysis')
 plt.xlabel('Sentiment')
 plt.ylabel('counts')
 df['Analysis'].value_counts().plot(kind='pie')
 plt.show()
-#stage2

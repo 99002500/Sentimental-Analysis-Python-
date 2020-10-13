@@ -10,7 +10,7 @@ ACCESSTOKENSECRET = "ZfuCGRWvkVdkv6Vl4pngMf8u4zyByZuZwoQgOxOHt55M2"
 authenticate = tweepy.OAuthHandler(CONSUMERKEY,CONSUMERSECRET)
 authenticate.set_access_token(ACCESSTOKEN, ACCESSTOKENSECRET)
 api = tweepy.API(authenticate, wait_on_rate_limit=True)
-posts = api.user_timeline(screen_name="@BillGates", count=100, lang="en", tweet_mode="extended")
+posts = api.user_timeline(screen_name="@elonmusk", count=100, lang="en", tweet_mode="extended")
 print("show the five and recent tweets: \n")
 i=1
 for tweet in posts[0:5]:
@@ -84,8 +84,3 @@ plt.ylabel('counts')
 df['Analysis'].value_counts().plot(kind='pie')
 plt.show()
 #stage2
-
-
-
-
-

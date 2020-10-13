@@ -21,7 +21,6 @@ jobs:
         pip install TextBlob
         pip install pandas
         pip install matplotlib
-        pip install docstring
     - name: Analysing the code with pylint
       run: |
         pylint `ls -R|grep .py$|xargs`

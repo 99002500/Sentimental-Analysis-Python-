@@ -77,7 +77,7 @@ for i in range(0,sortedDF.shape[0]):
         print(str(j) + ') '+sortedDF['Tweets'][i])
         print()
         j=j+1
-#plot polarity and subjectgffhfghivity
+#plot polarity and subjectivity
 plt.figure(figsize=(8,6))  
 for i in range(0,df.shape[0]):
     plt.scatter(df['Polarity'][i],df['Subjectivity'][i],color='blue')      

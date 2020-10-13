@@ -61,6 +61,7 @@ print(df)
 
 #Stage 1: Cleaning data (Removing @,#,hyperlinks etc ), store data in dataframe and find subjectivity and polarity of each sentence and find positive or negative sentence
 
+#print all positive values
 j=1
 sortedDF=df.sort_values(by=['Polarity'])
 for i in range(0,sortedDF.shape[0]):
